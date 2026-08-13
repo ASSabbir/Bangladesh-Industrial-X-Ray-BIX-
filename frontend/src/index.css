@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* ==========================================================================
+     BIX Design System — Centralized Color Variables (SRS Section 21.1)
+     Change these to re-theme the entire site from one place.
+     ========================================================================== */
+  --color-primary: #0f1b2d;      /* deep navy - headers, footer, hero */
+  --color-secondary: #16243b;    /* slightly lighter navy - cards on dark bg */
+  --color-accent: #F61C0F;       /* BIX red - CTAs, highlights */
+  --color-background: #f5f6f8;   /* light gray page background */
+  --color-surface: #ffffff;      /* card / surface background */
+  --color-textmain: #1b2431;     /* main body text on light background */
+  --color-textmuted: #64748b;    /* secondary / muted text */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-textmain antialiased;
+  font-family: var(--font-sans);
+}
+
+/* Reusable component classes */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-md transition-colors duration-200 hover:bg-red-700;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 rounded-md transition-colors duration-200 hover:bg-white/10;
+  }
+  .btn-outline-dark {
+    @apply inline-flex items-center justify-center gap-2 border border-primary/30 text-primary font-semibold px-6 py-3 rounded-md transition-colors duration-200 hover:bg-primary/5;
+  }
+  .section-eyebrow {
+    @apply text-accent text-xs font-bold tracking-widest uppercase mb-2;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-primary mb-3;
+  }
+  .card {
+    @apply bg-surface rounded-lg shadow-sm border border-black/5 overflow-hidden transition-shadow duration-200 hover:shadow-lg;
+  }
+  .container-page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .form-input {
+    @apply w-full rounded-md border border-black/10 bg-white px-4 py-2.5 text-sm text-textmain placeholder:text-textmuted focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent;
+  }
+  .form-label {
+    @apply block text-sm font-medium text-primary mb-1.5;
+  }
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
