@@ -7,6 +7,9 @@ import EquipmentCard from "../components/EquipmentCard";
 import SectionHeading from "../components/SectionHeading";
 import Loader from "../components/Loader";
 import heroVideo from '../assets/video/hero.webm'
+import PartnersMarquee from "../components/PartnersMarquee";
+import AboutPreview from "../components/AboutPreview";
+import TestimonialsSlider from "../components/TestimonialsSlider";
 
 const CLIENT_LOGOS = [
   "Chevron", "Halliburton", "Schlumberger", "Weatherford", "Bashundhara Group",
@@ -66,51 +69,52 @@ export default function Home() {
     <div>
       {/* Hero */}
       <section className="relative md:h-[70vh] overflow-hidden flex items-center">
-      {/* Background Video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src={heroVideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-      />
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src={heroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60" />
 
-      {/* Optional gradient for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
+        {/* Optional gradient for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
 
-      {/* Hero Content */}
-      <div className="container-page relative z-10 w-full py-20 sm:py-24 md:py-32 lg:py-36 text-center px-4 sm:px-6">
-        {/* Badge */}
-        <span className="inline-block bg-accent/90 text-white text-[10px] sm:text-xs md:text-sm font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-5 sm:mb-6 tracking-wide uppercase">
-          ISO/IEC 17025:2017 BAB Accredited
-        </span>
+        {/* Hero Content */}
+        <div className="container-page relative z-10 w-full py-20 sm:py-24 md:py-32 lg:py-36 text-center px-4 sm:px-6">
+          {/* Badge */}
+          <span className="inline-block bg-accent/90 text-white text-[10px] sm:text-xs md:text-sm font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-5 sm:mb-6 tracking-wide uppercase">
+            ISO/IEC 17025:2017 BAB Accredited
+          </span>
 
-        {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-5 max-w-5xl mx-auto text-white">
-          Bangladesh Industrial X-Ray
-        </h1>
+          {/* Heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-5 max-w-5xl mx-auto text-white">
+            Bangladesh Industrial X-Ray
+          </h1>
 
-        {/* Description */}
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/75 leading-relaxed max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto mb-7 sm:mb-8 px-2">
-          Trusted NDT & Industrial Inspection partner since 1995 — Radiography,
-          Ultrasonic, PAUT, PMI, Lifting Equipment and Rope Access services
-          across Bangladesh.
-        </p>
+          {/* Description */}
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/75 leading-relaxed max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto mb-7 sm:mb-8 px-2">
+            Trusted NDT & Industrial Inspection partner since 1995 — Radiography,
+            Ultrasonic, PAUT, PMI, Lifting Equipment and Rope Access services
+            across Bangladesh.
+          </p>
 
-        {/* CTA */}
-        <Link
-          to="/contact"
-          className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base"
-        >
-          Get a Quote
-        </Link>
-      </div>
-    </section>
+          {/* CTA */}
+          <Link
+            to="/contact"
+            className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base"
+          >
+            Get a Quote
+          </Link>
+        </div>
+      </section>
+      <PartnersMarquee></PartnersMarquee>
 
       {/* Services preview */}
       <section className="py-20 bg-background">
@@ -134,6 +138,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <AboutPreview></AboutPreview>
 
       {/* Equipment preview */}
       <section className="py-20 bg-white">
@@ -177,24 +183,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-background">
-        <div className="container-page">
-          <SectionHeading eyebrow="Client Voices" title="Testimonials" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="card p-6">
-                <div className="text-accent text-sm mb-3">★★★★★</div>
-                <p className="text-textmuted text-sm mb-4 italic">"{t.quote}"</p>
-                <p className="font-semibold text-primary text-sm">{t.name}</p>
-                <p className="text-xs text-textmuted">{t.role}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link to="/testimonials" className="btn-outline-dark">Read More Reviews</Link>
-          </div>
-        </div>
-      </section>
+      <TestimonialsSlider></TestimonialsSlider>
 
       {/* Clients */}
       <section className="py-16 bg-white">

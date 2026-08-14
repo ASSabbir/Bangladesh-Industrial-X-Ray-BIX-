@@ -3,8 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import api from "../api/axios";
 import PageHeader from "../components/PageHeader";
 import Loader from "../components/Loader";
-import PageImage from "../components/PageImage";
 import EmptyState from "../components/EmptyState";
+import WorkingProcessRoadmap from "../components/WorkingProcessRoadmap";
+import { resolveImageUrl } from "../utils/resolveImageUrl";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -21,7 +22,6 @@ export default function ServiceDetail() {
       .catch(() => setNotFound(true))
       .finally(() => setLoading(false));
   }, [slug]);
-  console.log(service)
 
   if (loading) return <Loader />;
   if (notFound || !service) return <EmptyState title="Service not found" message="This service may have been removed or renamed." />;
@@ -31,13 +31,20 @@ export default function ServiceDetail() {
       <PageHeader
         eyebrow={service.category}
         title={service.title}
+        image={service.bannerImage}
         breadcrumb={[{ to: "/services", label: "Services" }, { label: service.title }]}
       />
 
       <section className="py-16 bg-background">
-        
         <div className="container-page grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2 space-y-10">
+            {/* Short description lead */}
+            {service.shortDescription && (
+              <p className="text-lg text-primary/90 font-medium leading-relaxed border-l-4 border-accent pl-4">
+                {service.shortDescription}
+              </p>
+            )}
+
             <div>
               <h2 className="text-xl font-bold text-primary mb-3">Introduction</h2>
               <p className="text-textmuted leading-relaxed">{service.introduction}</p>
@@ -45,6 +52,15 @@ export default function ServiceDetail() {
                 <p className="text-textmuted leading-relaxed mt-4">{service.detailedDescription}</p>
               )}
             </div>
+
+            {/* Main service image */}
+            {service.image && (
+              <img
+                src={resolveImageUrl(service.image)}
+                alt={service.title}
+                className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl shadow-md"
+              />
+            )}
 
             {service.features?.length > 0 && (
               <div>
@@ -62,18 +78,8 @@ export default function ServiceDetail() {
 
             {service.workingProcess?.length > 0 && (
               <div>
-                <h2 className="text-xl font-bold text-primary mb-4">Complete Working Process</h2>
-                <ol className="relative border-l-2 border-accent/30 pl-6 space-y-6">
-                  {service.workingProcess.map((step, i) => (
-                    <li key={i} className="relative">
-                      <span className="absolute -left-[31px] w-6 h-6 rounded-full bg-accent text-white text-xs font-bold flex items-center justify-center">
-                        {i + 1}
-                      </span>
-                      <p className="font-semibold text-primary">{step.title}</p>
-                      <p className="text-sm text-textmuted">{step.description}</p>
-                    </li>
-                  ))}
-                </ol>
+                <h2 className="text-xl font-bold text-primary mb-6">Complete Working Process</h2>
+                <WorkingProcessRoadmap steps={service.workingProcess} />
               </div>
             )}
 
@@ -87,13 +93,35 @@ export default function ServiceDetail() {
                       to={`/equipment/${eq.slug}`}
                       className="card flex gap-3 p-3 items-center hover:shadow-md"
                     >
-                      <PageImage src={eq.image} label={eq.name} className="w-16 h-16 rounded object-cover shrink-0" />
+                      <img
+                        src={resolveImageUrl(eq.image)}
+                        alt={eq.name}
+                        className="w-16 h-16 rounded object-cover shrink-0 bg-background"
+                      />
                       <div>
                         <p className="font-semibold text-primary text-sm">{eq.name}</p>
                         <p className="text-xs text-textmuted">{eq.manufacturer}</p>
                         <span className="text-accent text-xs font-semibold">View Details →</span>
                       </div>
                     </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {service.relatedGallery?.length > 0 && (
+              <div>
+                <h2 className="text-xl font-bold text-primary mb-4">Related Gallery</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {service.relatedGallery.map((g) => (
+                    <div key={g._id} className="card overflow-hidden">
+                      <img
+                        src={resolveImageUrl(g.image)}
+                        alt={g.title}
+                        className="w-full h-32 object-cover bg-background"
+                      />
+                      <p className="text-xs font-medium text-primary p-2 line-clamp-2">{g.title}</p>
+                    </div>
                   ))}
                 </div>
               </div>
