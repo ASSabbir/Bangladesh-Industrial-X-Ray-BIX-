@@ -52,7 +52,7 @@ export default function SwiperImage() {
                             <img src={img.src}
                             alt={img.label}
                             label={img.label}
-                            className="w-full h-full object-cover" alt="" />
+                            className="w-full h-full object-cover"  />
                         </div>
                     </SwiperSlide>
                 ))}

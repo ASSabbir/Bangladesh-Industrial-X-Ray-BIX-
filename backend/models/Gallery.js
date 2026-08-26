@@ -6,6 +6,7 @@ const GallerySchema = new mongoose.Schema(
     image: { type: String, required: true },
     description: { type: String },
     projectName: { type: String },
+    category: { type: String },
     date: { type: Date },
     service: { type: mongoose.Schema.Types.ObjectId, ref: "Service" },
     equipment: { type: mongoose.Schema.Types.ObjectId, ref: "Equipment" },

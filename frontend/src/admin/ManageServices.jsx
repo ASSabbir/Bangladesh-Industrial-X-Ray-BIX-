@@ -1,4 +1,5 @@
 import ResourceManager from "./components/ResourceManager";
+import { CATEGORY_OPTIONS } from "../constants/categories";
 
 const config = {
   title: "Manage Services",
@@ -9,19 +10,20 @@ const config = {
   ],
   fields: [
     { name: "title", label: "Title", kind: "text", required: true, placeholder: "Radiography Testing (X-Ray & Gamma Ray)" },
-    { name: "category", label: "Category", kind: "text", placeholder: "Non-Destructive Testing" },
+    { name: "category", label: "Category", kind: "select", required: true, options: CATEGORY_OPTIONS },
     { name: "shortDescription", label: "Short Description", kind: "textarea", placeholder: "One or two sentence summary shown on cards." },
     { name: "introduction", label: "Introduction", kind: "textarea" },
     { name: "detailedDescription", label: "Detailed Description", kind: "textarea" },
     { name: "workingProcess", label: "Working Process Steps", kind: "steps" },
     { name: "features", label: "Why Choose This Service (Features)", kind: "list" },
     { name: "benefits", label: "Service Benefits", kind: "list" },
-    { name: "image", label: "Card Image", kind: "image" },
-    { name: "bannerImage", label: "Banner Image", kind: "image" },
+    { name: "image", label: "Card / Main Image", kind: "image" },
+    { name: "relatedEquipment", label: "Related Equipment", kind: "equipmentPicker" },
   ],
   emptyItem: {
-    title: "", category: "Non-Destructive Testing", shortDescription: "", introduction: "",
-    detailedDescription: "", workingProcess: [], features: [], benefits: [], image: "", bannerImage: "", published: true,
+    title: "", category: "", shortDescription: "", introduction: "",
+    detailedDescription: "", workingProcess: [], features: [], benefits: [], image: "",
+    relatedEquipment: [], published: true,
   },
 };
 

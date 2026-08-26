@@ -1,6 +1,9 @@
 import PageHeader from "../components/PageHeader";
 import SectionHeading from "../components/SectionHeading";
 import PageImage from "../components/PageImage";
+import img1 from '../assets/image/b5.webp'
+import img2 from '../assets/image/ceo.webp'
+
 
 const STRENGTHS = [
   "90+ trained and certified NDT personnel",
@@ -11,8 +14,8 @@ const STRENGTHS = [
 ];
 
 const ACHIEVEMENTS = [
-  { year: "2008", title: "BSNDT Award 2008", desc: "Recognized by the Bangladesh Society of Non Destructive Testing for outstanding performance in NDT." },
-  { year: "2024", title: "ISO/IEC 17025:2017 Re-accreditation", desc: "Re-accredited by the Bangladesh Accreditation Board (BAB) through 2027." },
+  { year: "2008", img: img1, title: "BSNDT Award 2008", desc: "Recognized by the Bangladesh Society of Non Destructive Testing for outstanding performance in NDT." },
+  { year: "2024", img: img1, title: "ISO/IEC 17025:2017 Re-accreditation", desc: "Re-accredited by the Bangladesh Accreditation Board (BAB) through 2027." },
 ];
 
 const TEAM = [
@@ -23,7 +26,7 @@ const TEAM = [
 export default function About() {
   return (
     <div>
-      <PageHeader eyebrow="Since 1995" title="About Bangladesh Industrial X-Ray" breadcrumb={[{ label: "About Us" }]} />
+      <PageHeader image={img1} eyebrow="Since 1995" title="About Bangladesh Industrial X-Ray" breadcrumb={[{ label: "About Us" }]} />
 
       <section className="py-16 bg-background">
         <div className="container-page max-w-4xl">
@@ -45,7 +48,8 @@ export default function About() {
       <section className="pb-16 bg-background">
         <div className="container-page">
           <div className="card p-8 grid grid-cols-1 md:grid-cols-[160px_1fr] gap-6 items-start">
-            <PageImage label="Md. Faisal Rahman" className="w-32 h-32 rounded-full object-cover mx-auto md:mx-0" />
+            {/* <PageImage label="Md. Faisal Rahman" className="w-32 h-32 rounded-full object-cover mx-auto md:mx-0" /> */}
+            <img src={img2} alt="" />
             <div>
               <p className="section-eyebrow">CEO Message</p>
               <p className="italic text-textmuted mb-4">
@@ -106,12 +110,15 @@ export default function About() {
           <h2 className="section-title !text-left">Achievements</h2>
           <div className="space-y-4 mt-6">
             {ACHIEVEMENTS.map((a) => (
-              <div key={a.year} className="flex gap-4 bg-white rounded-md border border-black/5 p-4">
-                <div className="text-2xl font-bold text-accent shrink-0 w-16">{a.year}</div>
-                <div>
-                  <p className="font-semibold text-primary">{a.title}</p>
-                  <p className="text-sm text-textmuted">{a.desc}</p>
+              <div className="flex w-full  p-6 bg-white gap-6 justify-between">
+                <div key={a.year} className="flex gap-4 p-10 bg-white w-full rounded-md ">
+                  <div className="text-2xl font-bold text-accent shrink-0 w-16">{a.year}</div>
+                  <div>
+                    <p className="font-semibold text-primary">{a.title}</p>
+                    <p className="text-sm text-textmuted">{a.desc}</p>
+                  </div>
                 </div>
+                <img src={a.img} className="h-32 rounded-xl" alt="" />
               </div>
             ))}
           </div>

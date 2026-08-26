@@ -5,10 +5,12 @@ import PageHeader from "../components/PageHeader";
 import Loader from "../components/Loader";
 import PageImage from "../components/PageImage";
 import EmptyState from "../components/EmptyState";
-
+import { resolveImageUrl } from "../utils/resolveImageUrl";
+import img1 from '../assets/image/b4.webp'
 export default function EquipmentDetail() {
   const { slug } = useParams();
   const [item, setItem] = useState(null);
+  const [categoryGallery, setCategoryGallery] = useState([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
@@ -22,12 +24,27 @@ export default function EquipmentDetail() {
       .finally(() => setLoading(false));
   }, [slug]);
 
+  // Same category-linkage as the service detail page — gallery images
+  // sharing this equipment's category show up automatically, no manual
+  // per-item selection needed in the admin panel.
+  useEffect(() => {
+    if (!item?.category) {
+      setCategoryGallery([]);
+      return;
+    }
+    api
+      .get(`/gallery?category=${encodeURIComponent(item.category)}`)
+      .then((res) => setCategoryGallery(res.data.data))
+      .catch(() => setCategoryGallery([]));
+  }, [item?.category]);
+
   if (loading) return <Loader />;
   if (notFound || !item) return <EmptyState title="Equipment not found" />;
 
   return (
     <div>
       <PageHeader
+      image={img1}
         eyebrow={item.category}
         title={item.name}
         breadcrumb={[{ to: "/equipment", label: "Equipment" }, { label: item.name }]}
@@ -91,6 +108,24 @@ export default function EquipmentDetail() {
                 <div className="flex justify-between"><dt className="text-textmuted">Quantity</dt><dd className="font-medium text-primary text-right">{item.quantity}</dd></div>
               </dl>
             </div>
+
+            {categoryGallery.length > 0 && (
+              <div className="card p-6">
+                <h3 className="font-semibold text-primary mb-3">Related Gallery</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {categoryGallery.slice(0, 6).map((g) => (
+                    <div key={g._id} className="rounded-md overflow-hidden">
+                      <img
+                        src={resolveImageUrl(g.image)}
+                        alt={g.title}
+                        className="w-full h-20 object-cover bg-background"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <Link to="/contact" className="btn-primary w-full">Request Inspection</Link>
           </aside>
         </div>

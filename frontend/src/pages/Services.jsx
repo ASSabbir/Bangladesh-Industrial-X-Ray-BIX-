@@ -4,7 +4,7 @@ import PageHeader from "../components/PageHeader";
 import ServiceCard from "../components/ServiceCard";
 import Loader from "../components/Loader";
 import EmptyState from "../components/EmptyState";
-
+import img1 from '../assets/image/b2.webp'
 export default function Services() {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ export default function Services() {
 
   return (
     <div>
-      <PageHeader eyebrow="Non-Destructive Testing" title="Our Services" breadcrumb={[{ label: "Services" }]} />
+      <PageHeader image={img1} eyebrow="Non-Destructive Testing" title="Our Services" breadcrumb={[{ label: "Services" }]} />
       <section className="py-16 bg-background">
         <div className="container-page">
           {loading ? (

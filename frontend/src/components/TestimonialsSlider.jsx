@@ -108,9 +108,7 @@ export default function TestimonialsSlider() {
 ))}
                 </Swiper>
 
-                <div className="text-center mt-6">
-                    <Link to="/testimonials" className="btn-outline-dark">Read More Reviews</Link>
-                </div>
+                
             </div>
         </section>
     );

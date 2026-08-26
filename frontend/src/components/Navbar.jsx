@@ -10,9 +10,8 @@ const NAV_LINKS = [
   { to: "/certifications", label: "Certifications" },
   { to: "/gallery", label: "Gallery" },
   { to: "/previous-projects", label: "Previous Projects" },
-  { to: "/training", label: "Training" },
-  { to: "/partners", label: "Partners" },
-  { to: "/testimonials", label: "Testimonials" },
+  // { to: "/training", label: "Training" },
+  
   { to: "/contact", label: "Contact" },
 ];
 

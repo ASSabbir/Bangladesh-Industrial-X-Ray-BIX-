@@ -19,7 +19,16 @@ const ServiceSchema = new mongoose.Schema(
     benefits: [{ type: String }],
     image: { type: String },
     bannerImage: { type: String },
-    relatedEquipment: [{ type: mongoose.Schema.Types.ObjectId, ref: "Equipment" }],
+    relatedEquipment: {
+      type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Equipment" }],
+      validate: {
+        validator: function (arr) {
+          return !arr || arr.length <= 4;
+        },
+        message: "A service can have at most 4 related equipment items.",
+      },
+      default: [],
+    },
     relatedGallery: [{ type: mongoose.Schema.Types.ObjectId, ref: "Gallery" }],
     published: { type: Boolean, default: true },
   },

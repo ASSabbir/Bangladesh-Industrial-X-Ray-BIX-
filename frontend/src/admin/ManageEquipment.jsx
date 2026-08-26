@@ -1,4 +1,5 @@
 import ResourceManager from "./components/ResourceManager";
+import { CATEGORY_OPTIONS } from "../constants/categories";
 
 const config = {
   title: "Manage Equipment",
@@ -10,7 +11,7 @@ const config = {
   ],
   fields: [
     { name: "name", label: "Name", kind: "text", required: true, placeholder: "X-Ray Machine — XXG-3505 (350KV)" },
-    { name: "category", label: "Category", kind: "text", placeholder: "Radiographic Testing" },
+    { name: "category", label: "Category", kind: "select", required: true, options: CATEGORY_OPTIONS },
     { name: "manufacturer", label: "Manufacturer", kind: "text" },
     { name: "model", label: "Model", kind: "text" },
     { name: "quantity", label: "Quantity", kind: "text", placeholder: "05 Sets" },

@@ -1,6 +1,6 @@
 import PageHeader from "../components/PageHeader";
 import PageImage from "../components/PageImage";
-
+import img1 from '../assets/image/b4.webp'
 const CERTS = [
   { name: "ISO/IEC 17025:2017 Accreditation", issuer: "BAB (Bangladesh Accreditation Board)", info: "Testing laboratory accreditation covering NDT methods." },
   { name: "ISO 9001:2015", issuer: "TUV Austria", info: "Quality Management System certification." },
@@ -14,7 +14,7 @@ const CERTS = [
 export default function Certifications() {
   return (
     <div>
-      <PageHeader eyebrow="Accreditation" title="Certifications & Licences" breadcrumb={[{ label: "Certifications" }]} />
+      <PageHeader image={img1} eyebrow="Accreditation" title="Certifications & Licences" breadcrumb={[{ label: "Certifications" }]} />
       <section className="py-16 bg-background">
         <div className="container-page">
           <p className="text-textmuted max-w-3xl mb-10">

@@ -1,6 +1,7 @@
 import ImageUploadField from "./ImageUploadField";
 import ImageListUploadField from "./ImageListUploadField";
 import ArrayTextAreaField from "./ArrayTextAreaField";
+import RelatedEquipmentField from "./RelatedEquipmentField";
 
 // Native HTML <input> types this form is allowed to render for plain fields.
 // Kept as a strict whitelist so an unexpected string (e.g. "image") can never
@@ -10,10 +11,11 @@ const NATIVE_TEXT_TYPES = ["text", "email", "password", "number", "date", "url",
 
 // Renders one form field based on a simple field-config object.
 // `kind` selects the widget: image, imagelist, textarea, checkbox, list,
-// steps, specs. No `kind` (or an unrecognized one) renders a plain text-like
-// input, using `type` only as the native HTML input type (defaults to "text").
+// steps, specs, select, equipmentPicker. No `kind` (or an unrecognized one)
+// renders a plain text-like input, using `type` only as the native HTML
+// input type (defaults to "text").
 export default function FormField({ field, value, onChange }) {
-  const { name, label, kind, type, placeholder, required } = field;
+  const { name, label, kind, type, placeholder, required, options } = field;
   const handle = (v) => onChange(name, v);
 
   switch (kind) {
@@ -22,6 +24,31 @@ export default function FormField({ field, value, onChange }) {
 
     case "imagelist":
       return <ImageListUploadField field={field} value={value} onChange={onChange} />;
+
+    case "equipmentPicker":
+      return <RelatedEquipmentField field={field} value={value} onChange={onChange} />;
+
+    case "select":
+      return (
+        <div>
+          <label className="form-label">{label}{required && <span className="text-accent"> *</span>}</label>
+          <select
+            className="form-input"
+            required={required}
+            value={value ?? ""}
+            onChange={(e) => handle(e.target.value)}
+          >
+            <option value="" disabled>
+              Select {label.toLowerCase()}...
+            </option>
+            {(options || []).map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </select>
+        </div>
+      );
 
     case "textarea":
       return (

@@ -10,6 +10,7 @@ import EquipmentDetail from "./pages/EquipmentDetail";
 import Certifications from "./pages/Certifications";
 import Gallery from "./pages/Gallery";
 import PreviousProjects from "./pages/PreviousProjects";
+import ProjectDetail from "./pages/ProjectDetail";
 import Training from "./pages/Training";
 import Partners from "./pages/Partners";
 import Testimonials from "./pages/Testimonials";
@@ -43,6 +44,7 @@ export default function App() {
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/previous-projects" element={<PreviousProjects />} />
+        <Route path="/previous-projects/:id" element={<ProjectDetail />} />
         <Route path="/training" element={<Training />} />
         <Route path="/partners" element={<Partners />} />
         <Route path="/testimonials" element={<Testimonials />} />

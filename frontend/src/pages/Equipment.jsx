@@ -4,7 +4,7 @@ import PageHeader from "../components/PageHeader";
 import EquipmentCard from "../components/EquipmentCard";
 import Loader from "../components/Loader";
 import EmptyState from "../components/EmptyState";
-
+import img1 from '../assets/image/b5.webp'
 export default function Equipment() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ export default function Equipment() {
 
   return (
     <div>
-      <PageHeader eyebrow="Our Fleet" title="Inspection Equipment" breadcrumb={[{ label: "Equipment" }]} />
+      <PageHeader image={img1} eyebrow="Our Fleet" title="Inspection Equipment" breadcrumb={[{ label: "Equipment" }]} />
       <section className="py-16 bg-background">
         <div className="container-page">
           {loading ? (

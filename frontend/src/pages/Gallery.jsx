@@ -4,7 +4,7 @@ import PageHeader from "../components/PageHeader";
 import PageImage from "../components/PageImage";
 import Loader from "../components/Loader";
 import EmptyState from "../components/EmptyState";
-
+import img1 from '../assets/image/b2.webp'
 export default function Gallery() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -20,7 +20,7 @@ export default function Gallery() {
 
   return (
     <div>
-      <PageHeader eyebrow="Our Work" title="Gallery" breadcrumb={[{ label: "Gallery" }]} />
+      <PageHeader image={img1} eyebrow="Our Work" title="Gallery" breadcrumb={[{ label: "Gallery" }]} />
       <section className="py-16 bg-background">
         <div className="container-page">
           {loading ? (

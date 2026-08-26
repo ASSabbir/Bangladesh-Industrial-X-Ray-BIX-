@@ -10,6 +10,28 @@ import heroVideo from '../assets/video/hero.webm'
 import PartnersMarquee from "../components/PartnersMarquee";
 import AboutPreview from "../components/AboutPreview";
 import TestimonialsSlider from "../components/TestimonialsSlider";
+import logo1 from "../assets/image/partners/1.webp";
+import logo2 from "../assets/image/partners/2.webp";
+import logo3 from "../assets/image/partners/3.webp";
+import logo4 from "../assets/image/partners/4.webp";
+import logo5 from "../assets/image/partners/5.webp";
+import logo6 from "../assets/image/partners/6.webp";
+import logo7 from "../assets/image/partners/7.webp";
+import logo8 from "../assets/image/partners/8.webp";
+import logo9 from "../assets/image/partners/9.webp";
+import logo10 from "../assets/image/partners/10.webp";
+import logo11 from "../assets/image/partners/11.webp";
+import logo12 from "../assets/image/partners/12.webp";
+import logo13 from "../assets/image/partners/13.webp";
+import logo14 from "../assets/image/partners/14.webp";
+import logo15 from "../assets/image/partners/15.webp";
+import logo16 from "../assets/image/partners/16.webp";
+import logo17 from "../assets/image/partners/17.webp";
+import logo18 from "../assets/image/partners/18.webp";
+import logo19 from "../assets/image/partners/19.webp";
+import logo20 from "../assets/image/partners/20.webp";
+import logo21 from "../assets/image/partners/21.webp";
+
 
 const CLIENT_LOGOS = [
   "Chevron", "Halliburton", "Schlumberger", "Weatherford", "Bashundhara Group",
@@ -17,6 +39,10 @@ const CLIENT_LOGOS = [
   "KAFCO", "Titas Gas", "BPDB", "GTCL",
 ];
 
+const rowLeft = [
+  logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10,
+  logo11, logo12, logo13, logo14, logo15, logo16, logo17, logo18, logo19, logo20,logo21
+];
 const TESTIMONIALS = [
   {
     quote: "BIX delivered radiography services on our pipeline project with excellent quality and full compliance to standards.",
@@ -188,11 +214,11 @@ export default function Home() {
       {/* Clients */}
       <section className="py-16 bg-white">
         <div className="container-page">
-          <SectionHeading eyebrow="Trusted By" title="Our Happy Clients" />
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {CLIENT_LOGOS.map((c) => (
-              <div key={c} className="h-16 rounded-md bg-background border border-black/5 flex items-center justify-center text-xs font-semibold text-textmuted text-center px-2">
-                {c}
+          <SectionHeading eyebrow="Trusted By" title="Our Regular Clients" />
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-4">
+            {rowLeft.map((c,i) => (
+              <div key={i} className="h p-4 rounded-md bg-background border border-black/5 flex items-center justify-center text-xs font-semibold text-textmuted text-center px-2">
+                <img src={c} alt="" className="h-12" />
               </div>
             ))}
           </div>

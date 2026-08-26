@@ -10,6 +10,7 @@ router.get("/", async (req, res, next) => {
     if (req.query.service) filter.service = req.query.service;
     if (req.query.equipment) filter.equipment = req.query.equipment;
     if (req.query.project) filter.project = req.query.project;
+    if (req.query.category) filter.category = req.query.category;
     const items = await Gallery.find(filter).sort({ createdAt: -1 });
     res.json({ success: true, count: items.length, data: items });
   } catch (err) {
