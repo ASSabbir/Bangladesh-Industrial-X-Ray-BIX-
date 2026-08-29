@@ -16,23 +16,33 @@ connectDB();
 // --- Global middleware ---
 app.use(helmet());
 
-// CORS: in production, only the exact CLIENT_URL domain is allowed. In
-// development, any http://localhost:<port> / http://127.0.0.1:<port> origin
-// is allowed automatically — Vite sometimes bumps to a different port
-// (5174, 5175...) if 5173 is already taken, and hardcoding one port caused
-// logins to fail with a CORS error whenever that happened.
-const isLocalhostOrigin = (origin) => /^https?:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin);
+const isLocalhostOrigin = (origin) =>
+  /^https?:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin);
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin) return callback(null, true); // same-origin / server-to-server / curl
+      console.log("CORS DEBUG:", {
+        origin,
+        NODE_ENV: process.env.NODE_ENV,
+        CLIENT_URL: process.env.CLIENT_URL,
+        isLocalhost: origin ? isLocalhostOrigin(origin) : null,
+      });
+
+      if (!origin) {
+        return callback(null, true);
+      }
+
       if (process.env.NODE_ENV === "production") {
         return origin === process.env.CLIENT_URL
           ? callback(null, true)
           : callback(new Error("Not allowed by CORS"));
       }
-      if (isLocalhostOrigin(origin)) return callback(null, true);
+
+      if (isLocalhostOrigin(origin)) {
+        return callback(null, true); 
+      }
+
       return callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
@@ -51,7 +61,7 @@ app.use(
     res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
     next();
   },
-  express.static(path.join(__dirname, "uploads"))
+  express.static(path.join(__dirname, "uploads")),
 );
 
 // Basic rate limiting for API routes (security requirement from SRS section 24)
@@ -89,7 +99,8 @@ if (process.env.NODE_ENV === "production") {
   // Anything that isn't /api or /uploads falls through to index.html so
   // React Router can handle client-side routes like /services/paut.
   app.get("*", (req, res, next) => {
-    if (req.path.startsWith("/api") || req.path.startsWith("/uploads")) return next();
+    if (req.path.startsWith("/api") || req.path.startsWith("/uploads"))
+      return next();
     res.sendFile(path.join(frontendDist, "index.html"));
   });
 }

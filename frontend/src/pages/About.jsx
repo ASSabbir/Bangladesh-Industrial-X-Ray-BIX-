@@ -30,13 +30,13 @@ export default function About() {
 
       <section className="py-16 bg-background">
         <div className="container-page max-w-4xl">
-          <p className="text-textmuted leading-relaxed mb-4">
+          <p className="text-textmuted leading-relaxed mb-4 text-justify">
             Bangladesh Industrial X-Ray (B.I.X) was established in 1995 with a vision to provide quality
             and prompt services in the field of Non-Destructive Testing. Starting with just 5 personnel
             and limited resources, BIX has grown into a professionally managed company with a devoted
             workforce of over 90 personnel, extending operations across all sectors and all over Bangladesh.
           </p>
-          <p className="text-textmuted leading-relaxed">
+          <p className="text-textmuted leading-relaxed text-justify">
             BIX is a proprietorship company and a proud leader in NDT services in Bangladesh, holding the
             largest number of Pipeline X-Ray Crawlers in the country. BIX believes human resources are the
             most valuable asset, with personnel receiving rigorous, regular training in NDT methods and
@@ -52,7 +52,7 @@ export default function About() {
             <img src={img2} alt="" />
             <div>
               <p className="section-eyebrow">CEO Message</p>
-              <p className="italic text-textmuted mb-4">
+              <p className="italic text-textmuted mb-4 text-justify">
                 "Since our founding in 1995, our philosophy has remained the same — teamwork, both
                 in-house and with our customers, is the anchor for successful project completion. We are
                 committed to Total Customer Satisfaction through Excellent Services, and we look forward
@@ -69,7 +69,7 @@ export default function About() {
         <div className="container-page grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="card p-8">
             <h3 className="font-semibold text-primary text-xl mb-3">Mission</h3>
-            <p className="text-textmuted text-sm leading-relaxed">
+            <p className="text-textmuted text-sm leading-relaxed text-justify">
               To meet customer's satisfaction by rendering services maintaining all requisite safety,
               norms & standards utilizing technology-driven skilled resources to ensure QA & QC of
               industrial products through the application of world-class Non-Destructive Testing & other
@@ -79,7 +79,7 @@ export default function About() {
           </div>
           <div className="card p-8">
             <h3 className="font-semibold text-primary text-xl mb-3">Vision</h3>
-            <p className="text-textmuted text-sm leading-relaxed">
+            <p className="text-textmuted text-sm leading-relaxed text-justify">
               To become leaders in the specialized field of Non-destructive Testing, Material Testing and
               related quality services by maintaining highest industrial standards, ensuring safe working
               environment, professional services fulfilling customer satisfaction through innovation,
