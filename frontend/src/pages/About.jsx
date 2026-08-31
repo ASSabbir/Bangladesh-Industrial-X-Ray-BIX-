@@ -3,6 +3,7 @@ import SectionHeading from "../components/SectionHeading";
 import PageImage from "../components/PageImage";
 import img1 from '../assets/image/b5.webp'
 import img2 from '../assets/image/ceo.webp'
+import img3 from '../assets/image/Team2.png'
 
 
 const STRENGTHS = [
@@ -19,10 +20,18 @@ const ACHIEVEMENTS = [
 ];
 
 const TEAM = [
-  { name: "Md. Faisal Rahman", role: "Chief Executive Officer" },
-  { name: "Shuvo Alam", role: "Director of Operations" },
+  {
+    name: "Mr. Faizur Rahman",
+    role: "Chief Executive Officer",
+    image: img2,
+  },
+  {
+    name: "Md Shafiul Alam",
+    role: "Director of Operations",
+    image: img3,
+  },
 ];
-
+ 
 export default function About() {
   return (
     <div>
@@ -58,7 +67,7 @@ export default function About() {
                 committed to Total Customer Satisfaction through Excellent Services, and we look forward
                 to a long, fulfilling association with every client we serve."
               </p>
-              <p className="font-semibold text-primary">Md. Faisal Rahman</p>
+              <p className="font-semibold text-primary">Mr. Faizur Rahman</p>
               <p className="text-sm text-textmuted">Chief Executive Officer</p>
             </div>
           </div>
@@ -126,20 +135,34 @@ export default function About() {
       </section>
 
       <section className="pb-20 bg-background">
-        <div className="container-page">
-          <p className="section-eyebrow">Leadership</p>
-          <h2 className="section-title !text-left">Team Introduction</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-6 max-w-xl">
-            {TEAM.map((t) => (
-              <div key={t.name} className="text-center">
-                <PageImage label={t.name} className="w-24 h-24 rounded-full object-cover mx-auto mb-3" />
-                <p className="font-semibold text-primary text-sm">{t.name}</p>
-                <p className="text-xs text-textmuted">{t.role}</p>
-              </div>
-            ))}
-          </div>
+  <div className="container-page">
+    <p className="section-eyebrow">Leadership</p>
+
+    <h2 className="section-title !text-left">
+      Team Introduction
+    </h2>
+
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-6 max-w-xl">
+      {TEAM.map((t) => (
+        <div key={t.name} className="text-center">
+          <img
+            src={t.image}
+            alt={t.name}
+            className="w-28 h-28 mx-auto mb-3"
+          />
+
+          <p className="font-semibold text-primary text-sm">
+            {t.name}
+          </p>
+
+          <p className="text-xs text-textmuted">
+            {t.role}
+          </p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
     </div>
   );
 }

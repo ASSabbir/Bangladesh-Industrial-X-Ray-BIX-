@@ -139,7 +139,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative md:h-[70vh] overflow-hidden flex items-center">
+      <section className="relative md:h-full overflow-hidden flex items-center ">
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover"

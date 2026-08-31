@@ -2,10 +2,10 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 const STATS = [
-  { value: 300, suffix: "+", label: "Projects Completed" },
-  { value: 500, suffix: "+", label: "Happy Clients" },
+  { value: 30, suffix: "+", label: "Years of Experience" },
+  { value: 50, suffix: "+", label: "Industries Served" },
   { value: 20, suffix: "+", label: "Awards Won" },
-  { value: 100, suffix: "+", label: "Certified Personnel" },
+  { value: 1000, suffix: "+", label: "Projects Delivered" },
 ];
 
 function StatItem({ value, suffix, label }) {
