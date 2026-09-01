@@ -53,6 +53,7 @@ export default function ServiceDetail() {
         title={service.title}
         image={img1}
         breadcrumb={[{ to: "/services", label: "Services" }, { label: service.title }]}
+        
       />
 
       <section className="py-16 bg-background">

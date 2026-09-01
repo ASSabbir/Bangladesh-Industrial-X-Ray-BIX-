@@ -53,8 +53,8 @@ Start the API:
 npm run dev      # with nodemon (auto-restart)
 ```
 
-The API runs at `http://localhost:5000/api`. Uploaded images are served from
-`http://localhost:5000/uploads/...`.
+The API runs at `https://bix-omega.vercel.app/api`. Uploaded images are served from
+`https://bix-omega.vercel.app/uploads/...`.
 
 ## 3. Frontend setup
 
@@ -66,7 +66,7 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:5173`. A working `.env` (`VITE_API_URL=http://localhost:5000/api`) is
+Visit `http://localhost:5173`. A working `.env` (`VITE_API_URL=https://bix-omega.vercel.app/api`) is
 already included.
 
 ## 4. Log in to the admin panel
