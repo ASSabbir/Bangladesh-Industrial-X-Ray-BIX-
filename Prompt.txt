@@ -1,0 +1,31 @@
+১. Gallery পেজ (ট্যাব + মোডাল + পেজিনেশন)
+frontend/src/pages/Gallery.jsx
+backend/models/Gallery.js
+backend/routes/gallery.js
+frontend/src/constants/categories.js — গ্যালারি ক্যাটাগরিগুলো কী কী (ট্যাব বানানোর জন্য দরকার)
+frontend/src/components/PageImage.jsx — এখনো দেখিনি, সব জায়গায় ব্যবহার হচ্ছে, মোডাল ডিজাইনের সাথে সামঞ্জস্য রাখতে দরকার
+frontend/src/utils/resolveImageUrl.js — ফাংশনটার সম্পূর্ণ কোড দেখিনি এখনো
+
+
+২. Certifications পেজ
+frontend/src/pages/Certifications.jsx
+
+৩. Equipment পেজ (পেজিনেশন ৮/পেজ)
+frontend/src/pages/Equipment.jsx
+backend/routes/equipment.js
+backend/models/Equipment.js
+
+৪. Services পেজ (পেজিনেশন)
+frontend/src/components/ServiceCard.jsx
+backend/routes/services.js
+backend/models/Service.js
+(Services.jsx আগেই দেয়া আছে)
+
+৫. Home পেজ ব্যানার (কাউন্টআপ স্ট্যাটস)
+frontend/src/pages/Home.jsx
+Home-এ ব্যবহৃত সাব-কম্পোনেন্টগুলো যদি থাকে: AboutPreview.jsx, WorkingProcessRoadmap.jsx, PartnersMarquee.jsx, TestimonialsSlider.jsx, SwiperImage.jsx
+৬. Footer ও Navbar
+frontend/src/components/Footer.jsx
+frontend/src/components/Navbar.jsx
+frontend/src/components/PublicLayout.jsx
+"৩৫ বছর অভিজ্ঞতা"-র ছবিটার exact ফাইলনেম (মনে হচ্ছে 30year.png, কনফার্ম করে দাও) এবং লোগোর ফাইলনেম (logo.png আছে দেখলাম asset ফোল্ডারে, ঠিক আছে কিনা বলো)

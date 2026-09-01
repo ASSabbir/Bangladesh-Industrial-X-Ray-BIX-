@@ -13,7 +13,7 @@ export default function ProjectCard({ project }) {
           src={project.images?.[0]}
           alt={project.projectName}
           label={project.projectName}
-          className="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-56 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
         />
         {project.yearOfExecution && (
           <span className="absolute top-3 right-3 bg-primary/90 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
