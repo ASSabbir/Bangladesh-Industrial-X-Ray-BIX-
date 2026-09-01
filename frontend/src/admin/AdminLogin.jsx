@@ -58,7 +58,7 @@ export default function AdminLogin() {
           disabled={loading}
           className="w-full mb-4 inline-flex items-center justify-center gap-2 border-2 border-dashed border-accent/40 text-accent font-semibold px-4 py-2.5 rounded-md text-sm hover:bg-accent/5 transition-colors disabled:opacity-60"
         >
-          {loading ? "Signing in..." : "⚡ Continue with Demo Account"}
+          {loading ? "Signing in..." : " Continue with Demo Account"}
         </button>
 
         <div className="flex items-center gap-3 mb-4">

@@ -1,0 +1,226 @@
+📦Bangladesh-Industrial-X-Ray-BIX-
+ ┣ 📂.git
+ ┃ ┣ 📂gk
+ ┃ ┃ ┗ 📜config
+ ┃ ┣ 📂hooks
+ ┃ ┃ ┣ 📜applypatch-msg.sample
+ ┃ ┃ ┣ 📜commit-msg.sample
+ ┃ ┃ ┣ 📜fsmonitor-watchman.sample
+ ┃ ┃ ┣ 📜post-update.sample
+ ┃ ┃ ┣ 📜pre-applypatch.sample
+ ┃ ┃ ┣ 📜pre-commit.sample
+ ┃ ┃ ┣ 📜pre-merge-commit.sample
+ ┃ ┃ ┣ 📜pre-push.sample
+ ┃ ┃ ┣ 📜pre-rebase.sample
+ ┃ ┃ ┣ 📜pre-receive.sample
+ ┃ ┃ ┣ 📜prepare-commit-msg.sample
+ ┃ ┃ ┣ 📜push-to-checkout.sample
+ ┃ ┃ ┣ 📜sendemail-validate.sample
+ ┃ ┃ ┗ 📜update.sample
+ ┃ ┣ 📂info
+ ┃ ┃ ┗ 📜exclude
+ ┃ ┣ 📂logs
+ ┃ ┃ ┣ 📂refs
+ ┃ ┃ ┃ ┣ 📂heads
+ ┃ ┃ ┃ ┃ ┗ 📜main
+ ┃ ┃ ┃ ┗ 📂remotes
+ ┃ ┃ ┃ ┃ ┗ 📂origin
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜HEAD
+ ┃ ┃ ┗ 📜HEAD
+ ┃ ┣ 📂objects
+ ┃ ┃ ┣ 📂info
+ ┃ ┃ ┗ 📂pack
+ ┃ ┃ ┃ ┣ 📜pack-27339349b2cc0c9fe65b588ed769a5f10da685ca.idx
+ ┃ ┃ ┃ ┣ 📜pack-27339349b2cc0c9fe65b588ed769a5f10da685ca.pack
+ ┃ ┃ ┃ ┗ 📜pack-27339349b2cc0c9fe65b588ed769a5f10da685ca.rev
+ ┃ ┣ 📂refs
+ ┃ ┃ ┣ 📂heads
+ ┃ ┃ ┃ ┗ 📜main
+ ┃ ┃ ┣ 📂remotes
+ ┃ ┃ ┃ ┗ 📂origin
+ ┃ ┃ ┃ ┃ ┗ 📜HEAD
+ ┃ ┃ ┗ 📂tags
+ ┃ ┣ 📜config
+ ┃ ┣ 📜description
+ ┃ ┣ 📜HEAD
+ ┃ ┣ 📜index
+ ┃ ┗ 📜packed-refs
+ ┣ 📂backend
+ ┃ ┣ 📂config
+ ┃ ┃ ┗ 📜db.js
+ ┃ ┣ 📂middleware
+ ┃ ┃ ┣ 📜auth.js
+ ┃ ┃ ┣ 📜errorHandler.js
+ ┃ ┃ ┗ 📜upload.js
+ ┃ ┣ 📂models
+ ┃ ┃ ┣ 📜Admin.js
+ ┃ ┃ ┣ 📜Equipment.js
+ ┃ ┃ ┣ 📜Gallery.js
+ ┃ ┃ ┣ 📜Project.js
+ ┃ ┃ ┣ 📜Service.js
+ ┃ ┃ ┗ 📜Training.js
+ ┃ ┣ 📂routes
+ ┃ ┃ ┣ 📜auth.js
+ ┃ ┃ ┣ 📜contact.js
+ ┃ ┃ ┣ 📜equipment.js
+ ┃ ┃ ┣ 📜gallery.js
+ ┃ ┃ ┣ 📜projects.js
+ ┃ ┃ ┣ 📜services.js
+ ┃ ┃ ┣ 📜training.js
+ ┃ ┃ ┗ 📜upload.js
+ ┃ ┣ 📂seed
+ ┃ ┃ ┣ 📜seed.js
+ ┃ ┃ ┗ 📜seedData.js
+ ┃ ┣ 📂uploads
+ ┃ ┃ ┣ 📜.gitkeep
+ ┃ ┃ ┗ 📜1787773829715-842919555.jpeg
+ ┃ ┣ 📜.env
+ ┃ ┣ 📜.env.example
+ ┃ ┣ 📜.gitignore
+ ┃ ┣ 📜package-lock.json
+ ┃ ┣ 📜package.json
+ ┃ ┗ 📜server.js
+ ┣ 📂frontend
+ ┃ ┣ 📂public
+ ┃ ┃ ┣ 📂images
+ ┃ ┃ ┃ ┣ 📂equipment
+ ┃ ┃ ┃ ┃ ┗ 📜.gitkeep
+ ┃ ┃ ┃ ┣ 📂gallery
+ ┃ ┃ ┃ ┃ ┗ 📜.gitkeep
+ ┃ ┃ ┃ ┣ 📂projects
+ ┃ ┃ ┃ ┃ ┗ 📜.gitkeep
+ ┃ ┃ ┃ ┗ 📂services
+ ┃ ┃ ┃ ┃ ┗ 📜.gitkeep
+ ┃ ┃ ┗ 📜robots.txt
+ ┃ ┣ 📂src
+ ┃ ┃ ┣ 📂admin
+ ┃ ┃ ┃ ┣ 📂components
+ ┃ ┃ ┃ ┃ ┣ 📜ArrayTextAreaField.jsx
+ ┃ ┃ ┃ ┃ ┣ 📜FormField.jsx
+ ┃ ┃ ┃ ┃ ┣ 📜ImageListUploadField.jsx
+ ┃ ┃ ┃ ┃ ┣ 📜ImageUploadField.jsx
+ ┃ ┃ ┃ ┃ ┣ 📜RelatedEquipmentField.jsx
+ ┃ ┃ ┃ ┃ ┗ 📜ResourceManager.jsx
+ ┃ ┃ ┃ ┣ 📜AdminDashboard.jsx
+ ┃ ┃ ┃ ┣ 📜AdminLayout.jsx
+ ┃ ┃ ┃ ┣ 📜AdminLogin.jsx
+ ┃ ┃ ┃ ┣ 📜ManageEquipment.jsx
+ ┃ ┃ ┃ ┣ 📜ManageGallery.jsx
+ ┃ ┃ ┃ ┣ 📜ManageProjects.jsx
+ ┃ ┃ ┃ ┣ 📜ManageServices.jsx
+ ┃ ┃ ┃ ┗ 📜ManageTraining.jsx
+ ┃ ┃ ┣ 📂api
+ ┃ ┃ ┃ ┣ 📜axios.js
+ ┃ ┃ ┃ ┗ 📜uploadImage.js
+ ┃ ┃ ┣ 📂assets
+ ┃ ┃ ┃ ┣ 📂image
+ ┃ ┃ ┃ ┃ ┣ 📂partners
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜1.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜10.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜11.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜12.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜13.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜14.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜15.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜16.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜17.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜18.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜19.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜2.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜20.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜21.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜22.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜23.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜24.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜25.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜26.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜27.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜28.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜29.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜3.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜30.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜31.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜32.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜33.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜34.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜35.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜36.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜37.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜38.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜39.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜4.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜40.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜5.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜6.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜7.webp
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜8.webp
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜9.webp
+ ┃ ┃ ┃ ┃ ┣ 📜1.webp
+ ┃ ┃ ┃ ┃ ┣ 📜2.webp
+ ┃ ┃ ┃ ┃ ┣ 📜3.webp
+ ┃ ┃ ┃ ┃ ┣ 📜30year.png
+ ┃ ┃ ┃ ┃ ┣ 📜4.webp
+ ┃ ┃ ┃ ┃ ┣ 📜5.webp
+ ┃ ┃ ┃ ┃ ┣ 📜b2.webp
+ ┃ ┃ ┃ ┃ ┣ 📜b3.webp
+ ┃ ┃ ┃ ┃ ┣ 📜b4.webp
+ ┃ ┃ ┃ ┃ ┣ 📜b5.webp
+ ┃ ┃ ┃ ┃ ┣ 📜ceo.webp
+ ┃ ┃ ┃ ┃ ┣ 📜logo.png
+ ┃ ┃ ┃ ┃ ┗ 📜servicsbanner.webp
+ ┃ ┃ ┃ ┗ 📂video
+ ┃ ┃ ┃ ┃ ┗ 📜hero.webm
+ ┃ ┃ ┣ 📂components
+ ┃ ┃ ┃ ┣ 📜AboutPreview.jsx
+ ┃ ┃ ┃ ┣ 📜EmptyState.jsx
+ ┃ ┃ ┃ ┣ 📜EquipmentCard.jsx
+ ┃ ┃ ┃ ┣ 📜Footer.jsx
+ ┃ ┃ ┃ ┣ 📜Loader.jsx
+ ┃ ┃ ┃ ┣ 📜Navbar.jsx
+ ┃ ┃ ┃ ┣ 📜PageHeader.jsx
+ ┃ ┃ ┃ ┣ 📜PageImage.jsx
+ ┃ ┃ ┃ ┣ 📜PartnersMarquee.jsx
+ ┃ ┃ ┃ ┣ 📜ProjectCard.jsx
+ ┃ ┃ ┃ ┣ 📜ProtectedRoute.jsx
+ ┃ ┃ ┃ ┣ 📜PublicLayout.jsx
+ ┃ ┃ ┃ ┣ 📜SectionHeading.jsx
+ ┃ ┃ ┃ ┣ 📜ServiceCard.jsx
+ ┃ ┃ ┃ ┣ 📜SwiperImage.jsx
+ ┃ ┃ ┃ ┣ 📜TestimonialsSlider.jsx
+ ┃ ┃ ┃ ┣ 📜TrainingCard.jsx
+ ┃ ┃ ┃ ┗ 📜WorkingProcessRoadmap.jsx
+ ┃ ┃ ┣ 📂constants
+ ┃ ┃ ┃ ┗ 📜categories.js
+ ┃ ┃ ┣ 📂context
+ ┃ ┃ ┃ ┗ 📜AuthContext.jsx
+ ┃ ┃ ┣ 📂pages
+ ┃ ┃ ┃ ┣ 📜About.jsx
+ ┃ ┃ ┃ ┣ 📜Certifications.jsx
+ ┃ ┃ ┃ ┣ 📜Contact.jsx
+ ┃ ┃ ┃ ┣ 📜Equipment.jsx
+ ┃ ┃ ┃ ┣ 📜EquipmentDetail.jsx
+ ┃ ┃ ┃ ┣ 📜ErrorPage.jsx
+ ┃ ┃ ┃ ┣ 📜Forbidden.jsx
+ ┃ ┃ ┃ ┣ 📜Gallery.jsx
+ ┃ ┃ ┃ ┣ 📜Home.jsx
+ ┃ ┃ ┃ ┣ 📜Maintenance.jsx
+ ┃ ┃ ┃ ┣ 📜NotFound.jsx
+ ┃ ┃ ┃ ┣ 📜Partners.jsx
+ ┃ ┃ ┃ ┣ 📜PreviousProjects.jsx
+ ┃ ┃ ┃ ┣ 📜ProjectDetail.jsx
+ ┃ ┃ ┃ ┣ 📜ServiceDetail.jsx
+ ┃ ┃ ┃ ┣ 📜Services.jsx
+ ┃ ┃ ┃ ┣ 📜Testimonials.jsx
+ ┃ ┃ ┃ ┗ 📜Training.jsx
+ ┃ ┃ ┣ 📂utils
+ ┃ ┃ ┃ ┗ 📜resolveImageUrl.js
+ ┃ ┃ ┣ 📜App.jsx
+ ┃ ┃ ┣ 📜index.css
+ ┃ ┃ ┗ 📜main.jsx
+ ┃ ┣ 📜.env.example
+ ┃ ┣ 📜.gitignore
+ ┃ ┣ 📜index.html
+ ┃ ┣ 📜package-lock.json
+ ┃ ┣ 📜package.json
+ ┃ ┗ 📜vite.config.js
+ ┗ 📜README.md

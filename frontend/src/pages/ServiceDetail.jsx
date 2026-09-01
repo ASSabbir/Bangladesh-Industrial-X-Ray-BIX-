@@ -46,6 +46,8 @@ export default function ServiceDetail() {
   if (loading) return <Loader />;
   if (notFound || !service) return <EmptyState title="Service not found" message="This service may have been removed or renamed." />;
 
+  console.log(service)
+
   return (
     <div>
       <PageHeader
