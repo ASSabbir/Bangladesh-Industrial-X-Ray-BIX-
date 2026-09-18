@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { FiMapPin, FiMail, FiPhone } from "react-icons/fi";
-import { FaFacebookF, FaLinkedinIn, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaYoutube,
+  FaWhatsapp,
+} from "react-icons/fa";
 import logo from "../assets/image/logo.png";
 
 const QUICK_LINKS = [
@@ -10,7 +15,7 @@ const QUICK_LINKS = [
   { to: "/equipment", label: "Equipment" },
   { to: "/certifications", label: "Certifications" },
   { to: "/gallery", label: "Gallery" },
-  { to: "/previous-projects", label: "Previous Projects" },
+  { to: "/completed-projects", label: "Completed Projects" },
   { to: "/training", label: "Training" },
   { to: "/partners", label: "Partners" },
   { to: "/testimonials", label: "Testimonials" },
@@ -33,13 +38,14 @@ export default function Footer() {
             <img src={logo} alt="BIX" className="w-28 sm:w-32" />
           </Link>
           <p className="text-sm leading-relaxed max-w-xs">
-            An ISO/IEC 17025:2017 BAB Accredited NDT company — An Ideal Home of NDT since 1995.
+            An ISO/IEC 17025:2017 BAB Accredited NDT company — An Ideal Home of
+            NDT since 1995.
           </p>
         </div>
 
         <div>
           <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-sm">
+          <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
             {QUICK_LINKS.map((l) => (
               <li key={l.to}>
                 <Link to={l.to} className="hover:text-accent transition-colors">
@@ -55,23 +61,34 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-3">
               <FiMapPin className="shrink-0 mt-0.5 text-accent" size={16} />
-              <span>House # 12, Road # 2, Block – A, Section # 11, Mirpur, Dhaka-1216, Bangladesh</span>
+              <span>
+                House # 12, Road # 2, Block – A, Section # 11, Mirpur,
+                Dhaka-1216, Bangladesh
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <FiMail className="shrink-0 mt-0.5 text-accent" size={16} />
-              <a href="mailto:faiz@bixndt.com" className="hover:text-accent">faiz@bixndt.com</a>
+              <a href="mailto:faiz@bixndt.com" className="hover:text-accent">
+                faiz@bixndt.com
+              </a>
             </li>
             <li className="flex items-start gap-3">
               <FiMail className="shrink-0 mt-0.5 text-accent" size={16} />
-              <a href="mailto:shuvo@bixndt.com" className="hover:text-accent">shuvo@bixndt.com</a>
+              <a href="mailto:shuvo@bixndt.com" className="hover:text-accent">
+                shuvo@bixndt.com
+              </a>
             </li>
             <li className="flex items-start gap-3">
               <FiPhone className="shrink-0 mt-0.5 text-accent" size={16} />
-              <a href="tel:+8801712519316" className="hover:text-accent">+880 1712 519 316</a>
+              <a href="tel:+8801712519316" className="hover:text-accent">
+                +880 1712 519 316
+              </a>
             </li>
             <li className="flex items-start gap-3">
               <FiPhone className="shrink-0 mt-0.5 text-accent" size={16} />
-              <a href="tel:+8801963622600" className="hover:text-accent">+880 1963 622 600</a>
+              <a href="tel:+8801963622600" className="hover:text-accent">
+                +880 1963 622 600
+              </a>
             </li>
           </ul>
         </div>
@@ -94,7 +111,8 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-5 text-center text-xs text-white/40">
-        © {new Date().getFullYear()} Bangladesh Industrial X-Ray. All rights reserved.
+        © {new Date().getFullYear()} Bangladesh Industrial X-Ray. All rights
+        reserved.
       </div>
     </footer>
   );

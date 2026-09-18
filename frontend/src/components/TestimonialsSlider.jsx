@@ -85,14 +85,12 @@ export default function TestimonialsSlider() {
                 >
                     {TESTIMONIALS.map((t, i) => (
   <SwiperSlide key={i}>
-    <div className="card p-6 h-[300px] flex flex-col justify-between">
-      <div>
-        <div className="text-accent text-sm mb-3">★★★★★</div>
-        <p className="text-textmuted text-sm italic line-clamp-4">
-          "{t.quote}"
-        </p>
-      </div>
-      <div className="flex items-center gap-3">
+    <div className="card p-6 h-[260px] flex flex-col">
+      <div className="text-accent text-sm mb-2">★★★★★</div>
+      <p className="text-textmuted text-sm italic line-clamp-5 flex-1">
+        "{t.quote}"
+      </p>
+      <div className="flex items-center gap-3 pt-4 mt-auto border-t border-black/5">
         <img
           src={t.avatar}
           alt={t.name}
