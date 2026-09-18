@@ -30,7 +30,13 @@ export default function ProjectDetail() {
   }, [id]);
 
   if (loading) return <Loader />;
-  if (notFound || !project) return <EmptyState title="Project not found" message="This project may have been removed." />;
+  if (notFound || !project)
+    return (
+      <EmptyState
+        title="Project not found"
+        message="This project may have been removed."
+      />
+    );
 
   const hasImages = project.images?.length > 0;
 
@@ -41,7 +47,10 @@ export default function ProjectDetail() {
           image={img1}
           eyebrow={project.workCategory}
           title={project.projectName}
-          breadcrumb={[{ to: "/previous-projects", label: "Previous Projects" }, { label: project.projectName }]}
+          breadcrumb={[
+            { to: "/completed-projects", label: "Completed Projects" },
+            { label: project.projectName },
+          ]}
         />
 
         <section className="py-16 bg-background">
@@ -52,8 +61,14 @@ export default function ProjectDetail() {
                   <Swiper
                     modules={[Autoplay, Pagination, Navigation]}
                     speed={600}
-                    autoplay={project.images.length > 1 ? { delay: 4000, disableOnInteraction: false } : false}
-                    pagination={project.images.length > 1 ? { clickable: true } : false}
+                    autoplay={
+                      project.images.length > 1
+                        ? { delay: 4000, disableOnInteraction: false }
+                        : false
+                    }
+                    pagination={
+                      project.images.length > 1 ? { clickable: true } : false
+                    }
                     navigation={project.images.length > 1}
                     loop={project.images.length > 1}
                     className="h-[260px] sm:h-[360px] md:h-[440px]"
@@ -73,8 +88,12 @@ export default function ProjectDetail() {
 
               {project.summary && (
                 <div>
-                  <h2 className="text-xl font-bold text-primary mb-3">Project Overview</h2>
-                  <p className="text-textmuted leading-relaxed">{project.summary}</p>
+                  <h2 className="text-xl font-bold text-primary mb-3">
+                    Project Overview
+                  </h2>
+                  <p className="text-textmuted leading-relaxed">
+                    {project.summary}
+                  </p>
                 </div>
               )}
 
@@ -87,14 +106,18 @@ export default function ProjectDetail() {
                     {project.clientFeedback}
                   </p>
                   {project.feedbackAuthor && (
-                    <p className="relative text-sm text-white/60 font-medium">— {project.feedbackAuthor}</p>
+                    <p className="relative text-sm text-white/60 font-medium">
+                      — {project.feedbackAuthor}
+                    </p>
                   )}
                 </div>
               )}
 
               {project.relatedServices?.length > 0 && (
                 <div>
-                  <h2 className="text-xl font-bold text-primary mb-4">Services Used in This Project</h2>
+                  <h2 className="text-xl font-bold text-primary mb-4">
+                    Services Used in This Project
+                  </h2>
                   <div className="flex flex-wrap gap-3">
                     {project.relatedServices.map((s) => (
                       <Link
@@ -112,12 +135,16 @@ export default function ProjectDetail() {
 
             <aside className="space-y-6">
               <div className="card p-6">
-                <h3 className="font-semibold text-primary mb-4">Project Details</h3>
+                <h3 className="font-semibold text-primary mb-4">
+                  Project Details
+                </h3>
                 <dl className="text-sm space-y-3">
                   {project.clientName && (
                     <div className="flex justify-between gap-3">
                       <dt className="text-textmuted shrink-0">Client</dt>
-                      <dd className="font-medium text-primary text-right">{project.clientName}</dd>
+                      <dd className="font-medium text-primary text-right">
+                        {project.clientName}
+                      </dd>
                     </div>
                   )}
                   {project.contractorName && (
@@ -138,25 +165,33 @@ export default function ProjectDetail() {
                   {project.location && (
                     <div className="flex justify-between gap-3">
                       <dt className="text-textmuted shrink-0">Location</dt>
-                      <dd className="font-medium text-primary text-right">{project.location}</dd>
+                      <dd className="font-medium text-primary text-right">
+                        {project.location}
+                      </dd>
                     </div>
                   )}
                   {project.workCategory && (
                     <div className="flex justify-between gap-3">
                       <dt className="text-textmuted shrink-0">Work Category</dt>
-                      <dd className="font-medium text-primary text-right">{project.workCategory}</dd>
+                      <dd className="font-medium text-primary text-right">
+                        {project.workCategory}
+                      </dd>
                     </div>
                   )}
                   {project.yearOfExecution && (
                     <div className="flex justify-between gap-3">
                       <dt className="text-textmuted shrink-0">Year</dt>
-                      <dd className="font-medium text-primary text-right">{project.yearOfExecution}</dd>
+                      <dd className="font-medium text-primary text-right">
+                        {project.yearOfExecution}
+                      </dd>
                     </div>
                   )}
                   {project.duration && (
                     <div className="flex justify-between gap-3">
                       <dt className="text-textmuted shrink-0">Duration</dt>
-                      <dd className="font-medium text-primary text-right">{project.duration}</dd>
+                      <dd className="font-medium text-primary text-right">
+                        {project.duration}
+                      </dd>
                     </div>
                   )}
                 </dl>
@@ -164,8 +199,12 @@ export default function ProjectDetail() {
 
               <div className="card p-6 bg-primary text-white">
                 <h3 className="font-semibold mb-2">Need a similar solution?</h3>
-                <p className="text-sm text-white/70 mb-4">Talk to our team about your project requirements.</p>
-                <Link to="/contact" className="btn-primary w-full">Contact Us</Link>
+                <p className="text-sm text-white/70 mb-4">
+                  Talk to our team about your project requirements.
+                </p>
+                <Link to="/contact" className="btn-primary w-full">
+                  Contact Us
+                </Link>
               </div>
             </aside>
           </div>

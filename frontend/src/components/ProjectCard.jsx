@@ -5,7 +5,7 @@ import PageImage from "./PageImage";
 export default function ProjectCard({ project }) {
   return (
     <Link
-      to={`/previous-projects/${project._id}`}
+      to={`/completed-projects/${project._id}`}
       className="card flex flex-col h-full group hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
     >
       <div className="relative overflow-hidden">
@@ -33,7 +33,9 @@ export default function ProjectCard({ project }) {
           {project.projectName}
         </h3>
 
-        <p className="text-textmuted text-sm mb-4 line-clamp-2 flex-1">{project.summary}</p>
+        <p className="text-textmuted text-sm mb-4 line-clamp-2 flex-1">
+          {project.summary}
+        </p>
 
         <div className="flex items-center justify-between pt-3 border-t border-black/5">
           <div className="flex items-center gap-2 min-w-0">
@@ -44,9 +46,13 @@ export default function ProjectCard({ project }) {
                 className="w-6 h-6 rounded-full object-cover shrink-0 bg-background"
               />
             )}
-            <span className="text-xs text-textmuted truncate">{project.clientName}</span>
+            <span className="text-xs text-textmuted truncate">
+              {project.clientName}
+            </span>
           </div>
-          <span className="text-accent text-xs font-semibold shrink-0 ml-3">View Details →</span>
+          <span className="text-accent text-xs font-semibold shrink-0 ml-3">
+            View Details →
+          </span>
         </div>
       </div>
     </Link>

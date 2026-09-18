@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import api from "../api/axios";
 import PageHeader from "../components/PageHeader";
 import ServiceCard from "../components/ServiceCard";
 import Loader from "../components/Loader";
 import EmptyState from "../components/EmptyState";
 import PageTransition from "../components/PageTransition";
+import CategoryTabs from "../components/CategoryTabs";
 import img1 from "../assets/image/b2.webp";
 
 const PAGE_SIZE = 6;
@@ -12,6 +13,7 @@ const PAGE_SIZE = 6;
 export default function Services() {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [tab, setTab] = useState("All");
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -22,8 +24,23 @@ export default function Services() {
       .finally(() => setLoading(false));
   }, []);
 
-  const totalPages = Math.max(1, Math.ceil(services.length / PAGE_SIZE));
-  const paged = services.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const tabs = useMemo(() => {
+    const cats = [...new Set(services.map((s) => s.category).filter(Boolean))];
+    return ["All", ...cats];
+  }, [services]);
+
+  const filtered = useMemo(
+    () => (tab === "All" ? services : services.filter((s) => s.category === tab)),
+    [services, tab]
+  );
+
+  const switchTab = (t) => {
+    setTab(t);
+    setPage(1);
+  };
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const paged = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   const goToPage = (p) => {
     if (p < 1 || p > totalPages) return;
@@ -43,11 +60,17 @@ export default function Services() {
               <EmptyState title="No services published yet" />
             ) : (
               <>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {paged.map((s) => (
-                    <ServiceCard key={s._id} service={s} />
-                  ))}
-                </div>
+                <CategoryTabs tabs={tabs} active={tab} onChange={switchTab} />
+
+                {filtered.length === 0 ? (
+                  <EmptyState title="No services in this category yet" />
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {paged.map((s) => (
+                      <ServiceCard key={s._id} service={s} />
+                    ))}
+                  </div>
+                )}
 
                 {totalPages > 1 && (
                   <div className="flex items-center justify-center gap-2 mt-12">

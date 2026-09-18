@@ -2,7 +2,7 @@
 
 A full-stack MERN (MongoDB, Express, React, Node.js) corporate website built to the project SRS:
 a hybrid static/dynamic site with a secured single-admin panel for managing Services, Equipment,
-Gallery, Previous Projects and Training — cross-linked via MongoDB references, with real image
+Gallery, Completed Projects and Training — cross-linked via MongoDB references, with real image
 upload support (not just URL text fields).
 
 ```
@@ -82,10 +82,11 @@ Password: ChangeMe123!
 before deploying publicly, then re-run `npm run seed`).
 
 From the dashboard you can create, edit, publish/unpublish and delete:
+
 - Services
 - Equipment
 - Gallery items
-- Previous Projects
+- Completed Projects
 - Training programs
 
 ## 5. Uploading images
@@ -126,7 +127,7 @@ In both cases, set `NODE_ENV=production`, a real `MONGO_URI` (Atlas is easiest),
 ## 8. What's implemented
 
 - **Public site**: Home, About, Services (list + detail), Equipment (list + detail),
-  Certifications, Gallery (with lightbox), Previous Projects, Training, Partners, Testimonials,
+  Certifications, Gallery (with lightbox), Completed Projects, Training, Partners, Testimonials,
   Contact (working form → backend endpoint), plus custom 404 / 403 / 500 / Maintenance pages.
 - **Admin panel**: JWT-secured login at `/admin/login`, dashboard with live counts, full
   Create/Read/Update/Delete for all 5 dynamic collections, with a real click-to-upload image

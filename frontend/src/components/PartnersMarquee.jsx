@@ -1,8 +1,3 @@
-/**
- * PartnersMarquee.jsx
- * Simple two-row infinite logo marquee — row 1 left, row 2 right.
- */
-
 import Marquee from "react-fast-marquee";
 
 import logo1 from "../assets/image/partners/1.webp";
@@ -46,36 +41,22 @@ import logo38 from "../assets/image/partners/38.webp";
 import logo39 from "../assets/image/partners/39.webp";
 import logo40 from "../assets/image/partners/40.webp";
 
-const rowLeft = [
+const ALL_LOGOS = [
   logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10,
   logo11, logo12, logo13, logo14, logo15, logo16, logo17, logo18, logo19, logo20,
-];
-
-const rowRight = [
   logo21, logo22, logo23, logo24, logo25, logo26, logo27, logo28, logo29, logo30,
   logo31, logo32, logo33, logo34, logo35, logo36, logo37, logo38, logo39, logo40,
 ];
 
 export default function PartnersMarquee() {
   return (
-    <section className="py-10 bg-white space-y-6">
-      <Marquee gradient={false} speed={50} >
-        {rowLeft.map((logo, i) => (
+    <section className="py-10 bg-white">
+      <Marquee gradient={false} speed={30}>
+        {ALL_LOGOS.map((logo, i) => (
           <img
             key={i}
             src={logo}
             alt={`Partner ${i + 1}`}
-            className="h-10 mx-6 sm:mx-8 object-contain"
-          />
-        ))}
-      </Marquee>
-
-      <Marquee gradient={false} speed={50} direction="right" >
-        {rowRight.map((logo, i) => (
-          <img
-            key={i}
-            src={logo}
-            alt={`Partner ${i + 21}`}
             className="h-10 mx-6 sm:mx-8 object-contain"
           />
         ))}

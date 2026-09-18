@@ -34,7 +34,12 @@ export default function PreviousProjects() {
   return (
     <PageTransition>
       <div>
-        <PageHeader image={img1} eyebrow="Our Track Record" title="Previous Projects" breadcrumb={[{ label: "Previous Projects" }]} />
+        <PageHeader
+          image={img1}
+          eyebrow="Our Track Record"
+          title="Completed Projects"
+          breadcrumb={[{ label: "Completed Projects" }]}
+        />
         <section className="py-16 bg-background">
           <div className="container-page">
             {loading ? (
@@ -59,19 +64,21 @@ export default function PreviousProjects() {
                       ‹
                     </button>
 
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
-                      <button
-                        key={p}
-                        onClick={() => goToPage(p)}
-                        className={`w-9 h-9 flex items-center justify-center rounded-full text-sm font-semibold transition-colors ${
-                          p === page
-                            ? "bg-accent text-white"
-                            : "border border-black/10 text-primary hover:border-accent hover:text-accent"
-                        }`}
-                      >
-                        {p}
-                      </button>
-                    ))}
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                      (p) => (
+                        <button
+                          key={p}
+                          onClick={() => goToPage(p)}
+                          className={`w-9 h-9 flex items-center justify-center rounded-full text-sm font-semibold transition-colors ${
+                            p === page
+                              ? "bg-accent text-white"
+                              : "border border-black/10 text-primary hover:border-accent hover:text-accent"
+                          }`}
+                        >
+                          {p}
+                        </button>
+                      ),
+                    )}
 
                     <button
                       onClick={() => goToPage(page + 1)}

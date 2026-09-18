@@ -7,7 +7,7 @@ const CARDS = [
   { key: "services", label: "Services", endpoint: "/services", to: "/admin/services" },
   { key: "equipment", label: "Equipment", endpoint: "/equipment", to: "/admin/equipment" },
   { key: "gallery", label: "Gallery Items", endpoint: "/gallery", to: "/admin/gallery" },
-  { key: "projects", label: "Previous Projects", endpoint: "/projects", to: "/admin/projects" },
+  { key: "projects", label: "Completed Projects", endpoint: "/projects", to: "/admin/projects" },
   { key: "training", label: "Training Programs", endpoint: "/training", to: "/admin/training" },
 ];
 
@@ -35,7 +35,7 @@ export default function AdminDashboard() {
       <h1 className="text-2xl font-bold text-primary mb-2">Dashboard</h1>
       <p className="text-textmuted mb-8 text-sm">
         Manage the dynamic content collections that power the BIX website — Services, Equipment,
-        Gallery, Previous Projects, and Training.
+        Gallery, Completed Projects, and Training.
       </p>
 
       {loading ? (

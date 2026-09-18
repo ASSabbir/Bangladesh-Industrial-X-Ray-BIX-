@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { to: "/equipment", label: "Equipment" },
   { to: "/certifications", label: "Certifications" },
   { to: "/gallery", label: "Gallery" },
-  { to: "/previous-projects", label: "Previous Projects" },
+  { to: "/completed-projects", label: "Completed Projects" },
   { to: "/training", label: "Training" },
   { to: "/contact", label: "Contact" },
 ];
@@ -27,10 +27,18 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 flex justify-center duration-200 bg-white ${scrolled ? "shadow-lg" : ""}`}>
-      <nav className={`container-page max-w-[1400px] w-full grid grid-cols-[auto_1fr_auto] items-center gap-4 transition-all duration-200 ${scrolled ? "py-2.5" : "py-4"}`}>
+    <header
+      className={`sticky top-0 z-50 flex justify-center duration-200 bg-white ${scrolled ? "shadow-lg" : ""}`}
+    >
+      <nav
+        className={`container-page max-w-[1400px] w-full grid grid-cols-[auto_1fr_auto] items-center gap-4 transition-all duration-200 ${scrolled ? "py-2.5" : "py-4"}`}
+      >
         <Link to="/" className="flex items-center shrink-0">
-          <img src={logo} className={`transition-all duration-200 ${scrolled ? "w-16" : "w-24"}`} alt="BIX" />
+          <img
+            src={logo}
+            className={`transition-all duration-200 ${scrolled ? "w-16" : "w-24"}`}
+            alt="BIX"
+          />
         </Link>
 
         <div className="hidden lg:flex items-center justify-center gap-6 xl:gap-8">
@@ -51,7 +59,11 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center justify-end shrink-0">
-          <img src={badge35} className={`transition-all duration-200 ${scrolled ? "w-12" : "w-22"}`} alt="35 Years of Experience" />
+          <img
+            src={badge35}
+            className={`transition-all duration-200 ${scrolled ? "w-12" : "w-22"}`}
+            alt="35 Years of Experience"
+          />
         </div>
 
         <button
