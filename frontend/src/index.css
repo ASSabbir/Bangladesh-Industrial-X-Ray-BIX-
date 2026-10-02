@@ -13,7 +13,7 @@
   --color-background: #f5f6f8;   /* light gray page background */
   --color-surface: #ffffff;      /* card / surface background */
   --color-textmain: #1b2431;     /* main body text on light background */
-  --color-textmuted: #64748b;    /* secondary / muted text */
+  --color-textmuted: #262626;    /* secondary / muted text */
 }
 
 html {

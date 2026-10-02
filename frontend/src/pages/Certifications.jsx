@@ -72,12 +72,18 @@ export default function Certifications() {
             onClick={close}
           >
             <div
-              className={`max-w-3xl w-full transition-all duration-200 ${visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+              className={`w-full max-w-3xl max-h-[90vh] flex flex-col transition-all duration-200 ${visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="bg-white rounded-lg overflow-hidden">
-                <img src={active.image} alt={active.name} className="w-full max-h-[80vh] object-contain bg-black/5" />
-                <div className="p-5 flex items-center justify-between">
+              <div className="bg-white rounded-lg overflow-hidden flex flex-col max-h-[90vh]">
+                <div className="flex-1 min-h-0 bg-black/5 flex items-center justify-center">
+                  <img
+                    src={active.image}
+                    alt={active.name}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+                <div className="shrink-0 p-5 flex items-center justify-between">
                   <div>
                     <p className="font-semibold text-primary text-sm">{active.name}</p>
                     <p className="text-xs text-textmuted">{active.issuer}</p>
