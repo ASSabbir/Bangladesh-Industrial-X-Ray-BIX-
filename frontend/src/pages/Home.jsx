@@ -6,7 +6,7 @@ import ServiceCard from "../components/ServiceCard";
 import EquipmentCard from "../components/EquipmentCard";
 import SectionHeading from "../components/SectionHeading";
 import Loader from "../components/Loader";
-import heroVideo from "../assets/video/hero.webm";
+import heroVideo from "../assets/video/0925.mp4";
 import PartnersMarquee from "../components/PartnersMarquee";
 import AboutPreview from "../components/AboutPreview";
 import TestimonialsSlider from "../components/TestimonialsSlider";
@@ -32,6 +32,8 @@ import logo19 from "../assets/image/partners/19.webp";
 import logo20 from "../assets/image/partners/20.webp";
 import logo21 from "../assets/image/partners/21.webp";
 import StatsCounter from "../components/StatsCounter";
+import SolutionFinderForm from "../components/SolutionFinderForm";
+import ExploreSolutions from "../components/Exploresolutions";
 
 const CLIENT_LOGOS = [
   "Chevron",
@@ -152,7 +154,7 @@ export default function Home() {
         />
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/30" />
 
         {/* Optional gradient for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
@@ -176,20 +178,21 @@ export default function Home() {
             Access services across Bangladesh.
           </p>
 
-          <StatsCounter />
+          {/* <StatsCounter /> */}
 
           {/* CTA */}
-          <Link
+          {/* <Link
             to="/contact"
             className="mt-12 btn-primary inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base"
           >
             Get a Quote
-          </Link>
+          </Link> */}
         </div>
       </section>
 
 
       <PartnersMarquee></PartnersMarquee>
+
 
       {/* Services preview */}
       <section className="py-20 bg-background">
@@ -215,6 +218,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <ExploreSolutions></ExploreSolutions>
 
       <AboutPreview></AboutPreview>
 
@@ -239,6 +243,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="bg-primary">
+        <div className="container-page py-16 ">
+          <h1 className="text-4xl font-semibold text-white mb-2">Find your solution</h1>
+          <h1 className="text-white mb-12">Whatever the challenge, we have the depth of expertise and breadth of solutions to deliver certainty.</h1>
+          <SolutionFinderForm />
+        </div>
+      </div>
+      {/* Testimonials */}
+      <TestimonialsSlider></TestimonialsSlider>
 
       {/* Mission / Vision band */}
       <section className="py-16 bg-primary text-white">
@@ -266,8 +279,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <TestimonialsSlider></TestimonialsSlider>
+
 
       {/* Clients */}
       <section className="py-16 bg-white">

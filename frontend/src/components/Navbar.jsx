@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import logo from "../assets/image/logo.png";
 import badge35 from "../assets/image/30year.png";
+import { useContactModal } from "../context/ContactModalContext";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
@@ -13,18 +14,21 @@ const NAV_LINKS = [
   { to: "/gallery", label: "Gallery" },
   { to: "/completed-projects", label: "Completed Projects" },
   { to: "/training", label: "Training" },
-  { to: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { openContactModal } = useContactModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 1);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const contactLinkClasses =
+    "group relative text-sm 2xl:text-base font-medium whitespace-nowrap transition-colors text-primary/80 hover:text-accent after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-red-500 after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100";
 
   return (
     <header
@@ -56,6 +60,9 @@ export default function Navbar() {
               {link.label}
             </NavLink>
           ))}
+          <button type="button" onClick={openContactModal} className={contactLinkClasses}>
+            Contact
+          </button>
         </div>
 
         <div className="hidden lg:flex items-center justify-end shrink-0">
@@ -93,6 +100,13 @@ export default function Navbar() {
                 {link.label}
               </NavLink>
             ))}
+            <button
+              type="button"
+              onClick={() => { setOpen(false); openContactModal(); }}
+              className="text-left py-2 px-2 rounded text-sm font-medium text-primary/80"
+            >
+              Contact
+            </button>
           </div>
         </div>
       )}

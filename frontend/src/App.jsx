@@ -16,7 +16,6 @@ import Training from "./pages/Training";
 import TrainingDetail from "./pages/TrainingDetail";
 import Partners from "./pages/Partners";
 import Testimonials from "./pages/Testimonials";
-import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Forbidden from "./pages/Forbidden";
 import ErrorPage from "./pages/ErrorPage";
@@ -31,6 +30,8 @@ import ManageEquipment from "./admin/ManageEquipment";
 import ManageGallery from "./admin/ManageGallery";
 import ManageProjects from "./admin/ManageProjects";
 import ManageTraining from "./admin/ManageTraining";
+import SolutionFinder from "./pages/SolutionFinder";
+
 
 export default function App() {
   return (
@@ -53,7 +54,8 @@ export default function App() {
           <Route path="/training/:id" element={<TrainingDetail />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/solution-finder" element={<SolutionFinder />} />
+          {/* /contact removed — Contact is now a global modal, see ContactModal.jsx */}
 
           {/* System pages (SRS section: custom error/status pages) */}
           <Route path="/403" element={<Forbidden />} />
