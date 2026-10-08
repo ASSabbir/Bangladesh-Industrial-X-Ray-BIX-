@@ -44,7 +44,7 @@ export default function AboutPreview() {
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary tracking-tight leading-[1.15] mb-4 sm:mb-5">
                         Bangladesh's Most Trusted Name in Industrial Inspection
                     </h2>
-                    <p className="text- text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 max-w-xl">
+                    <p className="text-textmuted text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 max-w-xl">
                         Since 1995, Bangladesh Industrial X-Ray has been the partner engineers call when a
                         weld, a pipeline, or a pressure vessel absolutely cannot fail. Accredited, certified,
                         and built on three decades of field experience — we don't just test your assets, we
