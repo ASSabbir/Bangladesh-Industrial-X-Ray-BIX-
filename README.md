@@ -34,7 +34,7 @@ MONGO_URI=mongodb://127.0.0.1:27017/bix_website
 JWT_SECRET=bix_dev_secret_change_this_before_going_live_...
 ADMIN_EMAIL=admin@bixndt.com
 ADMIN_PASSWORD=ChangeMe123!
-CLIENT_URL=http://localhost:5173
+CLIENT_URL=https://bix.techofsolution.com
 ```
 
 **Change `JWT_SECRET` and `ADMIN_PASSWORD` before deploying anywhere public.**
@@ -53,8 +53,8 @@ Start the API:
 npm run dev      # with nodemon (auto-restart)
 ```
 
-The API runs at `http://localhost:5000/api`. Uploaded images are served from
-`http://localhost:5000/uploads/...`.
+The API runs at `https://bix-omega.vercel.app/api`. Uploaded images are served from
+`https://bix-omega.vercel.app/uploads/...`.
 
 ## 3. Frontend setup
 
@@ -66,12 +66,12 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:5173`. A working `.env` (`VITE_API_URL=http://localhost:5000/api`) is
+Visit `https://bix.techofsolution.com`. A working `.env` (`VITE_API_URL=https://bix-omega.vercel.app/api`) is
 already included.
 
 ## 4. Log in to the admin panel
 
-Go to `http://localhost:5173/admin/login` and sign in with:
+Go to `https://bix.techofsolution.com/admin/login` and sign in with:
 
 ```
 Email:    admin@bixndt.com
